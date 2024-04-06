@@ -51,10 +51,10 @@ jobs:
     steps:
 
     - name: Build Docker image
-      run: docker build -t ${{ env.DOCKER_USERNAME}}/${{ env.IMAGE_REPO }}:latest ./app/api-labs
+      run: docker build -t juamsv/api-labs:latest ./app/api-labs
 
     - name: Push Docker image to DockerHub
-      run: docker push  ${{ env.DOCKER_USERNAME}}/${{ env.IMAGE_REPO }}:latest
+      run: docker push  juamsv/api-labs:latest
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
