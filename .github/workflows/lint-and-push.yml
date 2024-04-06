@@ -1,0 +1,60 @@
+name: build-and-push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # auto-format-and-lint:
+  #   name: Lint
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #   # Passo 1: Checkout do repositório
+  #   - uses: actions/checkout@master
+  #     with:
+  #       persist-credentials: false
+  #       fetch-depth: 0
+
+  #   # Passo 2: Configuração do ambiente Python
+  #   - name: Set up Python
+  #     uses: actions/setup-python@v2
+  #     with:
+  #       python-version: 3.8
+
+  #   # Passo 3: Instalação das dependências (flake8 e autopep8)
+  #   - name: Install Dependencies
+  #     run: |
+  #       pip install flake8
+  #       pip install autopep8
+
+  #   # Passo 4: Formatação automática do código
+  #   - name: Fix Code Formatting
+  #     run: autopep8 -v --in-place --recursive
+
+  #   # Passo 5: Verificação do lint nos arquivos Python
+  #   - name: Lint Python Files
+  #     run: flake8 app.py
+      
+  #   # Passo 6: Commit e push das alterações
+  #   - name: Commit & Push Changes
+  #     uses: actions-js/push@master
+  #     with:
+  #       github_token: ${{ secrets.TOKEN_GITHUB }}
+  #       repository: juam-sv/api-labs
+  #       branch: main
+
+  build-and-push:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Build Docker image
+      run: docker build -t ${{ env.DOCKER_USERNAME}}/${{ env.IMAGE_REPO }}:latest ./app/api-labs
+
+    - name: Push Docker image to DockerHub
+      run: docker push  ${{ env.DOCKER_USERNAME}}/${{ env.IMAGE_REPO }}:latest
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
