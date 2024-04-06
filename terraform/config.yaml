@@ -1,0 +1,81 @@
+workspaces:
+  default:
+    region: "us-east-1"
+    eks:
+      - name: teste-tmp1
+        # enabled: true
+        version: 1.28
+        endpoint_private_access: false
+        endpoint_public_access: true
+        vpc_cidr: "10.0.0.0/16"
+        scale_min: 1
+        scale_max: 4
+        scale_desire: 1
+        capacity_type: "ON_DEMAND"
+        disk_size: 15
+        # instance_types: ["t3.small", "t3.medium"]
+        tags:
+          Environment: dev
+          Owner: teste-tmp-user1
+          Squad: teste-tmp1
+      # - name: teste-tmp2
+      #   # enabled: true
+      #   version: 1.28
+      #   endpoint_private_access: false
+      #   endpoint_public_access: true
+      #   vpc_cidr: "10.20.0.0/16"
+      #   scale_min: 1
+      #   scale_max: 3
+      #   scale_desire: 1
+      #   capacity_type: SPOT
+      #   disk_size: 15
+      #   tags:
+      #     Environment: dev
+      #     Owner: teste-tmp-user2
+      #     Squad: teste-tmp2
+  dev-produto2-us-east-1:
+    region: "us-east-1"
+    eks:
+      - name: teste-tmp2
+        version: 1.28
+        endpoint_private_access: false
+        endpoint_public_access: true
+        scale_min: 1
+        scale_max: 4
+        scale_desire: 2
+        capacity_type: SPOT
+        disk_size: 15
+        tags:
+          Environment: dev
+          Owner: dev-teste
+          Squad: dev-teste2
+  hml-produto2-us-east-1:
+    eks:
+      - name: teste-tmp3
+        version: 1.28
+        endpoint_private_access: false
+        endpoint_public_access: true
+        scale_min: 1
+        scale_max: 4
+        scale_desire: 2
+        capacity_type: ON_DEMAND
+        disk_size: 15
+        tags:
+          Environment: dev
+          Owner: cleiton-rasta
+          Squad: produto-1
+  prod-produto2-us-east-1:
+    eks:
+      - name: teste-tmp4
+        version: 1.28
+        endpoint_private_access: false
+        endpoint_public_access: true
+        scale_min: 1
+        scale_max: 4
+        scale_desire: 2
+        capacity_type: ON_DEMAND
+        disk_size: 15
+        tags:
+          Environment: dev
+          Owner: cleiton-rasta
+          Squad: produto-1
