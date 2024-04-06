@@ -1,0 +1,6 @@
+[submodule "api-labs"]
+	path = app/api-labs
+	url = https://github.com/juam-sv/api-labs
+[submodule "app/api-labs"]
+	path = app/api-labs
+	url = https://github.com/juam-sv/api-labs
