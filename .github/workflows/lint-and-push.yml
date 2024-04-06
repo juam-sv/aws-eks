@@ -46,9 +46,14 @@ jobs:
   #       branch: main
 
   build-and-push:
-    name: Lint
+    name: build-and-push
     runs-on: ubuntu-latest
     steps:
+    
+    - uses: actions/checkout@master
+      with:
+        persist-credentials: false
+        fetch-depth: 0
 
     - name: Build Docker image
       run: docker build -t juamsv/api-labs:latest ./app/api-labs
