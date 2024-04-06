@@ -1,6 +1,6 @@
 
 
-name: ci
+name: build-and-deploy
 
 on:
   push:
@@ -33,4 +33,13 @@ jobs:
           file: ./api-labs/Dockerfile
           load: true
           push: true
-          tags: juamsv/api-labs:latest
+          tags: |
+            juamsv/api-labs:${{ github.sha }}
+
+      - name: Update Kubernetes Manifest
+        run: |
+          sed -i 's|image: api-labs:latest|image: juamsv/api-labs:${{ github.sha }}|' ./k8s/app.yaml
+          kubectl apply -f app.yaml
+        working-directory: ${{ github.workspace }}
+        env:
+          KUBECONFIG: ${{ secrets.KUBE_CONFIG_DATA }}

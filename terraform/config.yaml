@@ -2,24 +2,23 @@ workspaces:
   default:
     region: "us-east-1"
     eks:
-      - name: teste-tmp1
+      - name: cluster1
         # enabled: true
         version: 1.28
         endpoint_private_access: false
         endpoint_public_access: true
-        vpc_cidr: "10.0.0.0/16"
+        vpc_cidr: "10.10.0.0/16"
         scale_min: 1
         scale_max: 4
         scale_desire: 1
-        capacity_type: "ON_DEMAND"
+        capacity_type: "SPOT"
         disk_size: 15
         # instance_types: ["t3.small", "t3.medium"]
         tags:
           Environment: dev
-          Owner: teste-tmp-user1
-          Squad: teste-tmp1
-      # - name: teste-tmp2
-      #   # enabled: true
+          Owner: chapolin
+          Squad: astucia
+      # - name: cluster2
       #   version: 1.28
       #   endpoint_private_access: false
       #   endpoint_public_access: true
@@ -31,8 +30,8 @@ workspaces:
       #   disk_size: 15
       #   tags:
       #     Environment: dev
-      #     Owner: teste-tmp-user2
-      #     Squad: teste-tmp2
+      #     Owner: kakaroto
+      #     Squad: 
   dev-produto2-us-east-1:
     region: "us-east-1"
     eks:

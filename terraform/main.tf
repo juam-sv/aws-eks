@@ -1,6 +1,5 @@
 provider "aws" {
   region = try(local.workspace.region, "us-east-1")
-  profile = "juam-lab"
 }
 
 terraform {
