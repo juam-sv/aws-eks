@@ -27,6 +27,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: app/api-labs
+          context: ${{ github.workspace }}/app/api-labs
           push: true
           tags: juamsv/api-labs:latest
