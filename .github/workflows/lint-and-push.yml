@@ -27,7 +27,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./api-labs
+          context: ${{ github.workspace }}/api-labs
           file: ./api-labs/Dockerfile
           load: true
           push: true
