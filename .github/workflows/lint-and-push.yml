@@ -30,8 +30,7 @@ jobs:
           context: ./app/api-labs
           push: true
           tags: juamsv/api-labs:latest
-          
-          
+
 # name: build-and-push
 
 # on:
