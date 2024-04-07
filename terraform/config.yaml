@@ -11,13 +11,13 @@ workspaces:
         scale_min: 1
         scale_max: 4
         scale_desire: 1
-        capacity_type: "SPOT"
+        capacity_type: "ON_DEMAND"
         disk_size: 15
-        # instance_types: ["t3.small", "t3.medium"]
+        instance_types: ["t3.small", "t3.medium"]
         tags:
           Environment: dev
-          Owner: chapolin
-          Squad: astucia
+          Owner: usuario1
+          Squad: squad1
       # - name: cluster2
       #   version: 1.28
       #   endpoint_private_access: false
@@ -30,8 +30,8 @@ workspaces:
       #   disk_size: 15
       #   tags:
       #     Environment: dev
-      #     Owner: kakaroto
-      #     Squad: dbz
+      #     Owner: usuario2
+      #     Squad: squad2
   dev-produto2-us-east-1:
     region: "us-east-1"
     eks:
@@ -61,8 +61,8 @@ workspaces:
         disk_size: 15
         tags:
           Environment: dev
-          Owner: cleiton-rasta
-          Squad: produto-1
+          Owner: usuario4
+          Squad: squad4
   prod-produto2-us-east-1:
     eks:
       - name: teste-tmp4
@@ -76,5 +76,5 @@ workspaces:
         disk_size: 15
         tags:
           Environment: dev
-          Owner: cleiton-rasta
-          Squad: produto-1
+          Owner: usuario5
+          Squad: squad5
