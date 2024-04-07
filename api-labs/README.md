@@ -1,5 +1,6 @@
 # Flask REST API Lab
 
+# Link do repo original [https://github.com/juam-sv/api-labs](https://github.com/juam-sv/api-labs)
 [![Lint Pipeline](https://github.com/juam-sv/chatgpt-labs/actions/workflows/python-lint-test.yml/badge.svg)](https://github.com/juam-sv/chatgpt-labs/actions/workflows/python-lint-test.yml)
 
 This is an example application showcasing a Flask REST API with authentication using JSON web tokens (JWT). The application provides several endpoints for user management, dashboard access, login, logoff, generating reports, and retrieving the current time.
