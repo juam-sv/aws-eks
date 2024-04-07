@@ -86,6 +86,13 @@ $  curl  http://endpoint.elb.us-east-1.amazonaws.com:5000/time
 kubectl describe deployments api-labs
 ```
 
+10. Para deletar o ambiente.
+```bash
+kubectl delete -f k8s/app.yaml
+cd terraform
+tofu destroy -auto-approve
+```
+
 10. Links Adicionais
 
 - Doc da API de teste [https://github.com/juam-sv/api-labs](https://github.com/juam-sv/api-labs/tree/f2f4fbf0294cb56a61284eb2802163b49fcf659e)
