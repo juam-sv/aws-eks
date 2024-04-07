@@ -74,17 +74,11 @@ horizontalpodautoscaler.autoscaling/api-labs  created
 ```bash
 
 $  kubectl  get  svc
-
 NAME  TYPE  CLUSTER-IP  EXTERNAL-IP  PORT(S)  AGE
-
 external-api-labs-service  LoadBalancer  123.456.789.123  endpoint.elb.us-east-1.amazonaws.com  5000:30808/TCP  69m
-
 kubernetes  ClusterIP  123.20.0.1  <none>  443/TCP  83m
 
-  
-
 $  curl  http://endpoint.elb.us-east-1.amazonaws.com:5000/time
-
 ```
 
 8. Para rodar o pipeline configure as seguinte secrets no github e faça algum commit ou rode a pipe manualmente (Actions > Workflows > build-and-deploy > Run Workflow), também é possivel alterar as ENVs.
@@ -97,9 +91,12 @@ $  curl  http://endpoint.elb.us-east-1.amazonaws.com:5000/time
 
 - DOCKER_USERNAME
 
-  
+9. Acompenhe o deploy o status do deploy via
+```bash
+kubectl describe deployments api-labs
+```
 
-9. Links Adicionais
+10. Links Adicionais
 
 - Doc da API de teste [https://github.com/juam-sv/api-labs](https://github.com/juam-sv/api-labs/tree/f2f4fbf0294cb56a61284eb2802163b49fcf659e)
 
