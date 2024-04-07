@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v5
         env:
           IMAGE_TAG: ${{ steps.commit.outputs.short }}
-          IMAGE_REPO: ${{ .env.DOCKER_REPOSITORY }}
+          # IMAGE_REPO: ${{ .env.DOCKER_REPOSITORY }}
         with:
           context: ./api-labs
           file: ./api-labs/Dockerfile
