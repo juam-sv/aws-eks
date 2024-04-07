@@ -18,20 +18,20 @@ workspaces:
           Environment: dev
           Owner: usuario1
           Squad: squad1
-      # - name: cluster2
-      #   version: 1.28
-      #   endpoint_private_access: false
-      #   endpoint_public_access: true
-      #   vpc_cidr: "10.20.0.0/16"
-      #   scale_min: 1
-      #   scale_max: 3
-      #   scale_desire: 1
-      #   capacity_type: SPOT
-      #   disk_size: 15
-      #   tags:
-      #     Environment: dev
-      #     Owner: usuario2
-      #     Squad: squad2
+      - name: cluster2
+        version: 1.28
+        endpoint_private_access: false
+        endpoint_public_access: true
+        vpc_cidr: "10.20.0.0/16"
+        scale_min: 1
+        scale_max: 3
+        scale_desire: 1
+        capacity_type: SPOT
+        disk_size: 15
+        tags:
+          Environment: dev
+          Owner: usuario2
+          Squad: squad2
   dev-produto2-us-east-1:
     region: "us-east-1"
     eks:
