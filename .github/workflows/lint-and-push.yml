@@ -36,17 +36,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-      # - name: Build and push
-      #   uses: docker/build-push-action@v5
-      #   env:
-      #     IMAGE_TAG: ${{ steps.commit.outputs.short }}
-      #   with:
-      #     context: ./api-labs
-      #     file: ./api-labs/Dockerfile
-      #     load: true
-      #     push: true
-      #     tags: $IMAGE_REPO:${{ env.IMAGE_TAG }}
-
       - name: Build, tag, and push image
         env:
           DOCKER_REPO: ${{ env.DOCKER_REPOSITORY }}

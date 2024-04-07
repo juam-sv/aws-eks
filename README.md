@@ -6,6 +6,7 @@
  4. Opcionalmente, caso tenha criado novos workspaces no arquivo [config.yaml](https://github.com/juam-sv/aws-eks/blob/main/terraform/config.yaml). crie os correspondentes no terraform.
   ```
 $ tofu workspace new dev-produto1-us-east-1
+$ tofu workspace select dev-produto1-us-east-1
 ```
  ```
 # config.yaml
@@ -24,9 +25,9 @@ workspaces:
 ```
  5. Faça o deploy do cluster usando o terraform/opentofu
 ```
-cd terraform 
-tofu init
-tofu apply
+$ cd terraform 
+$ tofu init
+$ tofu apply
 ``` 
 6. Gere o kubeconfig e faça o deploy do manifesto
 ```
@@ -38,6 +39,15 @@ horizontalpodautoscaler.autoscaling/api-labs created
 ``` 
 7. Verifique e teste o endpoint gerado.
 ```
-kubectl describe svc external-api-labs-service
-curl http://endpoint:5000/time
+$ kubecolor get svc
+NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP                                                                     PORT(S)          AGE
+external-api-labs-service   LoadBalancer   123.456.789.123   endpoint.elb.us-east-1.amazonaws.com   5000:30808/TCP   69m
+kubernetes                  ClusterIP      123.20.0.1      <none>                                                                          443/TCP          83m
+
+$ curl http://endpoint.elb.us-east-1.amazonaws.com:5000/time
 ``` 
+ 8. Para rodar o pipeline configure as seguinte secrets no github e faça algum commit ou rode a pipe manualmente.
+ - AWS_ACCESS_KEY_ID
+ - AWS_SECRET_ACCESS_KEY
+ - DOCKER_PASSWORD
+ - DOCKER_USERNAME
