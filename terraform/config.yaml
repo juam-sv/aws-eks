@@ -31,7 +31,7 @@ workspaces:
       #   tags:
       #     Environment: dev
       #     Owner: kakaroto
-      #     Squad: 
+      #     Squad: dbz
   dev-produto2-us-east-1:
     region: "us-east-1"
     eks:

@@ -4,7 +4,8 @@ resource "aws_eks_node_group" "node_group" {
   node_role_arn   = aws_iam_role.eks_node_role.arn
   version = var.eks_version
 
-  subnet_ids             = local.all_subnet_ids
+  subnet_ids             = aws_subnet.private.*.id
+  # subnet_ids             = local.all_subnet_ids
   scaling_config {
     desired_size = var.scale_desire
     max_size     = var.scale_max

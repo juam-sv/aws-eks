@@ -1,0 +1,4 @@
+[submodule "api-labs"]
+	path = api-labs
+	url = git@github.com:juam-sv/api-labs.git
+	branch = v1.0
