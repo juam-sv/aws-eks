@@ -10,8 +10,8 @@ on:
 
 env:
   DOCKER_REPOSITORY: juamsv/api-labs
-  EKS_CLUSTER_NAME: cluster1
-  AWS_REGION: us-east-1
+  EKS_CLUSTER_NAME: ${{ env.EKS_CLUSTER_NAME }}
+  AWS_REGION: ${{ env.AWS_REGION }}
 
 jobs:
   docker:

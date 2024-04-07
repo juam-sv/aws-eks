@@ -57,9 +57,9 @@ $  tofu  apply
 
 ```bash
 
-$  aws  eks  update-kubeconfig  --region  us-east-1  --name  cluster-name
+$  aws eks update-kubeconfig --region us-east-1 --name cluster-name
 
-$  kubectl  apply  -f  k8s/app.yaml
+$  kubectl apply -f k8s/app.yaml
 
 deployment.apps/api-labs  created
 
@@ -73,7 +73,7 @@ horizontalpodautoscaler.autoscaling/api-labs  created
 
 ```bash
 
-$  kubecolor  get  svc
+$  kubectl  get  svc
 
 NAME  TYPE  CLUSTER-IP  EXTERNAL-IP  PORT(S)  AGE
 
@@ -87,7 +87,7 @@ $  curl  http://endpoint.elb.us-east-1.amazonaws.com:5000/time
 
 ```
 
-8. Para rodar o pipeline configure as seguinte secrets no github e faça algum commit ou rode a pipe manualmente.
+8. Para rodar o pipeline configure as seguinte secrets no github e faça algum commit ou rode a pipe manualmente (Actions > Workflows > build-and-deploy > Run Workflow), também é possivel alterar as ENVs.
 
 - AWS_ACCESS_KEY_ID
 
