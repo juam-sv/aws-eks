@@ -1,7 +1,7 @@
 # aws-eks
 
- 1. Primeiramente configure o AWS CLI caso vá rodar localmentel, segue a [doc](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
- 2. Instale o terraform ou [opentofu](https://opentofu.org/docs/intro/install/)
+ 1. Primeiramente configure as credenciais e/ou o AWS CLI caso vá rodar localmentel, segue a [doc](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+ 2. Instale o [terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) ou [opentofu](https://opentofu.org/docs/intro/install/)
  3. Altere o [arquivo de configuração do cluster](https://github.com/juam-sv/aws-eks/blob/main/terraform/config.yaml) caso ache necessário, 
  4. Opcionalmente, caso tenha criado novos workspaces no arquivo [config.yaml](https://github.com/juam-sv/aws-eks/blob/main/terraform/config.yaml). crie os correspondentes no terraform.
   ```
@@ -52,4 +52,6 @@ $ curl http://endpoint.elb.us-east-1.amazonaws.com:5000/time
  - DOCKER_PASSWORD
  - DOCKER_USERNAME
 
-9. 
+9. Links Adicionais
+ - Doc da API de teste [https://github.com/juam-sv/aws-eks/tree/main/api-labs](https://github.com/juam-sv/aws-eks/tree/main/api-labs) 
+ - Doc do Modulo criado de EKS/VPC- [https://github.com/juam-sv/aws-eks/tree/main/terraform/eks_vpc](https://github.com/juam-sv/aws-eks/tree/main/terraform/eks_vpc)
