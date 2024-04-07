@@ -1,8 +1,6 @@
 
 # aws-eks
 
-  
-
 1. Primeiramente configure as credenciais e/ou o AWS CLI caso vá rodar localmentel, segue a [doc](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 
 2. Instale o [terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) ou [opentofu](https://opentofu.org/docs/intro/install/)
@@ -28,27 +26,17 @@ $ tofu workspace select dev-produto1-us-east-1
 # config.yaml
 
 workspaces:
-
-default: #workspace default
-
-region: "us-east-1"
-
-eks:
-
-- name: cluster1 #Nome do cluster
-
-#...
-
-- name: cluster2
-
-#...
-
-dev-produto1-us-east-1: #workspace referenciado acima
-
-region: "us-west-1"
-
-- name: cluster3
-
+  default: #workspace default
+    region: "us-east-1"
+    eks:
+      - name: cluster1 #Nome do cluster
+...
+      - name: cluster2
+...
+  workspace1:
+    region: "us-west-1"
+    eks:
+      - name: cluster3
 ...
 
 ```
