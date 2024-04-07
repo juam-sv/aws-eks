@@ -10,8 +10,8 @@ on:
 
 env:
   DOCKER_REPOSITORY: juamsv/api-labs
-  EKS_CLUSTER_NAME: ${{ env.EKS_CLUSTER_NAME }}
-  AWS_REGION: ${{ env.AWS_REGION }}
+  EKS_CLUSTER_NAME: cluster1
+  AWS_REGION: us-east-1
 
 jobs:
   docker:
@@ -52,12 +52,9 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Update kube config
-        env:
-          EKS_CLUSTER_NAME: ${{ env.EKS_CLUSTER_NAME }}
-          AWS_REGION: ${{ env.AWS_REGION }}
         run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
 
       - name: Deploy to EKS
