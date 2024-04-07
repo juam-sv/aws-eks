@@ -51,3 +51,5 @@ $ curl http://endpoint.elb.us-east-1.amazonaws.com:5000/time
  - AWS_SECRET_ACCESS_KEY
  - DOCKER_PASSWORD
  - DOCKER_USERNAME
+
+9. 
