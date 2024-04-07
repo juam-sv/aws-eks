@@ -50,10 +50,10 @@ $  tofu  init
 $  tofu  apply
 ```
 
-6. Gere o kubeconfig e faça o deploy do manifesto
+6. Opcionalmente, Gere o kubeconfig e faça o deploy do manifesto localmente, se não rode direto a pipe que ela também faz o deploy da aplicação.
 
 ```bash
-$  aws eks update-kubeconfig --region us-east-1 --name cluster-name
+$  aws eks update-kubeconfig --region us-east-1 --name cluster1
 $  kubectl apply -f k8s/app.yaml
 deployment.apps/api-labs  created
 service/external-api-labs-service  created
@@ -93,7 +93,7 @@ cd terraform
 tofu destroy -auto-approve
 ```
 
-10. Links Adicionais
+11. Links Adicionais
 
 - Doc da API de teste [https://github.com/juam-sv/api-labs](https://github.com/juam-sv/api-labs/tree/f2f4fbf0294cb56a61284eb2802163b49fcf659e)
 
