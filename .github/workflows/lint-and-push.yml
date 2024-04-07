@@ -70,5 +70,5 @@ jobs:
           IMAGE_TAG: ${{ steps.commit.outputs.short }}
         run: |
             cd k8s && \
-            sed -i 's|image: juamsv/api-labs|image: juamsv/api-labs:$IMAGE_TAG|' app.yaml && \
+            sed -i "s|image: juamsv/api-labs:latest|image: juamsv/api-labs:$IMAGE_TAG|" app.yaml && \
             kubectl apply -f app.yaml
