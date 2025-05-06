@@ -97,4 +97,4 @@ tofu destroy -auto-approve
 
 - Doc da API de teste [https://github.com/juam-sv/api-labs](https://github.com/juam-sv/api-labs/tree/f2f4fbf0294cb56a61284eb2802163b49fcf659e)
 
-- Doc do Modulo criado de EKS/VPC- [README](./terraform/eks_vpc/README.md)
+- Doc do Modulo criado de EKS/VPC- [README](./terraform/eks_vpc/README.md) 
